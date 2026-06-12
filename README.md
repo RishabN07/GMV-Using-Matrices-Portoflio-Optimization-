@@ -1,4 +1,4 @@
-# GMV-Using-Matrices-Portoflio-Optimization-
+# GM-Using-Matrices-Portoflio-Optimization-
 import yfinance as yf
 import pandas as pd 
 import numpy as np
@@ -26,8 +26,6 @@ cov_matrix_annual = cov_matrix * 252
 inv_cov_matrix = np.linalg.inv(cov_matrix_annual)
 ann_expected_returns = ann_returns.values
 ones_vector = np.ones(5)
-numerator = inv_cov_matrix @ ones_vector
-denominator = ones_vector.T @ inv_cov_matrix @ ann_expected_returns
-weight_GMV = numerator / denominator
+weight_GMV = (inv_cov_matrix @ ones_vector) / (ones_vector.T @ inv_cov_matrix @ ann_expected_returns)
 print(weight_GMV)
 print(weight_GMV.sum())
