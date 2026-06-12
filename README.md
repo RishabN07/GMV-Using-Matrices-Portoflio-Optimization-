@@ -29,3 +29,5 @@ ones_vector = np.ones(5)
 weight_GMV = (inv_cov_matrix @ ones_vector) / (ones_vector.T @ inv_cov_matrix @ ann_expected_returns)
 print(weight_GMV)
 print(weight_GMV.sum())
+
+# This model is not applicable in a real case scenario for the following reasons: 1.Expected returns are historically calculated. 2.Variance is based on historical movements (optimal to use bottom up variance or Beta). 3.Over-sensitivity towards expectedd returns (Can be adjsuted for using Black-Litterman Model)
